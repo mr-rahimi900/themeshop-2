@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML5,CSS3,HTML,Template,multi-page,Zoben - Job Board HTML Template">
+    <meta name="description" content="Zoben - Job Board HTML Template">
+    <meta name="author" content="Barat Hadian">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
+
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+
+    <link rel="stylesheet" href="assets/fonts/remixicon.css">
+
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="assets/css/metismenu.min.css">
+
+    <link rel="stylesheet" href="assets/css/simplebar.min.css">
+
+    <link rel="stylesheet" href="assets/css/dropzone.min.css">
+
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="assets/css/odometer.min.css">
+
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <title>فروشگاه قالب های آماده تم شاپ </title>
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+
+<body>
+    <!-- start addTemplate-modal section -->
+    <div class="modal theme-modal modal-editProfile modal-addTemplate fade" id="addTemplate" tabindex="-1">
+        <div class="modal-dialog modal-md modal-dialog-centered modal-fullscreen-md-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title w-100">افزودن قالب</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fal fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body pb-0">
+                    <figure class="template-img d-none">
+                        <img src="./assets/images/MAHSOL-1.jpg" alt="">
+                    </figure>
+                    <form action="" class="form-add-template">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input class="form-control" type="file" id="formFile" onchange="preview()">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" id="title" class="form-control" placeholder="عنوان">
+                                    <label for="title" class="form-label">عنوان قالب</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="number" id="price" class="form-control" placeholder="قیمت">
+                                    <label for="price" class="form-label">قیمت قالب</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="custom-form">
+                                    <label for="message" class="form-label">توضیح مختصر</label>
+                                    <div class="custom-textarea">
+                                        <textarea name="message" id="message" rows="4" class="form-control"
+                                            placeholder="پیغام خود را وارد کنید"></textarea>
+                                        <i class="fas fa-comment"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="custom-textarea">
+                                    <label for="text" class="form-label">متن قالب</label>
+                                    <textarea name="text" id="text" rows="8" class="form-control"
+                                        placeholder="متن قالب"></textarea>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-animation button-cancel btn-md fw-bold text-white"
+                        data-bs-dismiss="modal">بستن</button>
+                    <button type="button" class="btn button-done bg-theme text-white btn-md fw-bold"
+                        data-bs-dismiss="modal">اعمال
+                        تغییرات</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end addTemplate-modal section -->
+    <!-- start loader section -->
+    <div class="preloader">
+        <div class="d-table">
+            <div class="d-table-cell">
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end loader section -->
+
+    <!-- start overlay section -->
+    <div class="overlay">
+    </div>
+    <!-- end overlay section -->
+
+    <!-- start header section -->
+    <header class="header bg-white">
+        <div class="container-fluid-lg">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header-main-content">
+                        <div class="right-area">
+                            <a href="index.html" class="logo">
+                                <img src="./assets/images/logo-temshop.png" class="img-fluid" alt="">
+                            </a>
+                            <button type="button" class="navbar-toggler d-xl-none d-inline" data-bs-toggle="offcanvas"
+                                data-bs-target="#responsiveMenu">
+                                <span class="navbar-toggler-icon">
+                                    <i class="fal fa-bars"></i>
+                                </span>
+                            </button>
+                            <nav class="navbar-main navbar navbar-expand-xl navbar-light navbar-sticky ms-5">
+                                <div class="offcanvas offcanvas-collapse order-xl-2" id="responsiveMenu">
+                                    <div class="offcanvas-header">
+                                        <h5>منو</h5>
+                                        <button type="button" class="btn-close lead" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <ul class="navbar-nav bg-white">
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="index.html">
+                                                    خانه
+                                                </a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#">
+                                                    قالب ها
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li class="nav-item">
+                                                        <a href="job-listing.html" class="nav-link">آخرین قالب ها</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="job-listing.html" class="nav-link">برترین قالب ها</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="blog-1.html">بلاگ</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="dashboard.html">داشبورد</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="about.html">درباره ما</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="contact.html">تماس با ما</a>
+                                            </li>
+                                        </ul>
+                                        <ul class="others-options d-sm-none d-block text-center">
+                                            <li class="optional-item pt-4">
+                                                <a href="log-in-register.html" class="btn btn-md two">ورود / ثبت نام <i
+                                                        class="ri-user-3-line"></i></a>
+                                            </li>
+                                            <li class="optional-item">
+                                                <a href="post-job.html" class="btn default-btn btn-md">فروشنده شو<i
+                                                        class="ri-briefcase-2-line"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </nav>
+                        </div>
+                        <div class="left-area ms-auto">
+                            <ul class="others-options d-none">
+                                <li class="optional-item">
+                                    <a href="log-in-register.html" class="btn btn-md two">ورود / ثبت نام <i
+                                            class="ri-user-3-line"></i></a>
+                                </li>
+                                <li class="optional-item">
+                                    <a href="post-job.html" class="btn btn-md default-btn">فروشنده شو<i
+                                            class="ri-briefcase-2-line"></i></a>
+                                </li>
+                            </ul>
+                            <div class="others-options d-flex align-items-center">
+                                <div class="optional-item">
+                                    <div class="dropdown profile-nav-item">
+                                        <a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <div class="menu-profile">
+                                                <img src="assets/images/ostad-md.jpg" class="rounded-circle"
+                                                    alt="image">
+                                                <span class="name ms-2">حساب کاربری</span>
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-menu">
+                                            <div class="dropdown-header d-flex flex-column align-items-center">
+                                                <div class="figure mb-3">
+                                                    <img src="assets/images/user-img/user-img2.jpg"
+                                                        class="rounded-circle" alt="image">
+                                                </div>
+                                                <div class="info text-center">
+                                                    <span class="name"> ایمان مدائنی</span>
+                                                    <p class="mb-3 email">imanmadaeny@gmail.com</p>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown-body">
+                                                <ul class="profile-nav p-0 pt-3">
+                                                    <li class="nav-item active">
+                                                        <a href="dashboard.html" class="nav-link">
+                                                            <span class="icon"><i class="ri-home-line"></i></span>
+                                                            <span class="menu-title">داشبورد</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li class="nav-item">
+                                                        <a href="dashboard-submit-resume.html" class="nav-link">
+                                                            <span class="icon"><i class="ri-close-line"></i></span>
+                                                            <span class="menu-title">ثبت رزومه</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="dashboard-packages.html" class="nav-link">
+                                                            <span class="icon"><i class="ri-stack-fill"></i></span>
+                                                            <span class="menu-title"> قالب ها</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="dropdown-footer">
+                                                <ul class="profile-nav">
+                                                    <li class="nav-item">
+                                                        <a href="index.html" class="nav-link"><i
+                                                                class="ri-logout-box-r-line"></i> <span>خروج</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="d-none">
+                                <span class="user-area">
+                                    <i class="fal fa-user"></i>
+                                    نام کاربری
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+    <!-- end header section -->
+
+    <section class="dashboard-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-2 col-lg-2 col-md-3 d-none d-md-block">
+                    <aside class="sidemenu-area">
+                        <div class="sidemenu-header">
+                            <a href="dashboard.html" class="navbar-brand d-flex align-items-center">
+                                <img src="assets/images/logo-temshop.png" alt="image">
+                            </a>
+                            <div class="responsive-burger-menu d-block d-lg-none">
+                                <span class="top-bar"></span>
+                                <span class="middle-bar"></span>
+                                <span class="bottom-bar"></span>
+                            </div>
+                        </div>
+                        <div class="sidemenu-body">
+                            <ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar>
+                                <li class="nav-item">
+                                    <a href="dashboard.html" class="nav-link">
+                                        <span class="icon"><i class="ri-home-line"></i></span>
+                                        <span class="menu-title">داشبورد</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dashboard-profile.html" class="nav-link">
+                                        <span class="icon"><i class="ri-user-line"></i></span>
+                                        <span class="menu-title">محصولات من</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dashboard-post-job.html" class="nav-link">
+                                        <span class="icon"><i class="ri-send-plane-fill"></i></span>
+                                        <span class="menu-title">ارسال شغل جدید</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dashboard-manage-job.html" class="nav-link">
+                                        <span class="icon"><i class="ri-briefcase-line"></i></span>
+                                        <span class="menu-title">مدیریت شغل ها</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dashboard-ticket.html" class="nav-link">
+                                        <span class="icon"><i class="ri-file-list-line"></i></span>
+                                        <span class="menu-title">تیکت های من</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="dashboard-my-wallet.html" class="nav-link">
+                                        <span class="icon"><i class="ri-bookmark-line"></i></span>
+                                        <span class="menu-title">کیف پول من</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dashboard-my-favorite.html" class="nav-link">
+                                        <span class="icon"><i class="ri-list-check"></i></span>
+                                        <span class="menu-title">علاقه مندی های من</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dashboard-packages.html" class="nav-link">
+                                        <span class="icon"><i class="ri-stack-fill"></i></span>
+                                        <span class="menu-title">بسته ها</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dashboard-messages.html" class="nav-link">
+                                        <span class="icon"><i class="ri-chat-1-line"></i></span>
+                                        <span class="menu-title">پیام ها</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dashboard-invoice.html" class="nav-link">
+                                        <span class="icon"><i class="ri-price-tag-line"></i></span>
+                                        <span class="menu-title">صورتحساب ها</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dashboard-resume-alerts.html" class="nav-link">
+                                        <span class="icon"><i class="ri-alert-line"></i></span>
+                                        <span class="menu-title">هشدارهای از سرگیری</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dashboard-change-password.html" class="nav-link">
+                                        <span class="icon"><i class="ri-lock-line"></i></span>
+                                        <span class="menu-title">تغییر کلمه عبور</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="dashboard-my-profile.html" class="nav-link">
+                                        <span class="icon"><i class="ri-user-line"></i></span>
+                                        <span class="menu-title">مشاهده پروفایل</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link">
+                                        <span class="icon"><i class="ri-logout-circle-r-line"></i></span>
+                                        <span class="menu-title">خروج</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link">
+                                        <span class="icon"><i class="ri-delete-bin-line"></i></span>
+                                        <span class="menu-title">حذف پروفایل</span>
+                                    </a>
+                                </li>
+                                <!-- start panel for seller -->
+                                <li class="seller-panel nav-item">
+                                    <div href="#" class="accordion custom-accordion nav-link border-0">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button type="button" class="accordion-button collapsed ps-0"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapsePanelOne"
+                                                    aria-expanded="true">
+                                                    <span class="icon"><i class="ri-delete-bin-line"></i></span>
+                                                    پنل فروشنده
+                                                </button>
+                                            </h2>
+                                            <div id="collapsePanelOne" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="dashboard-template-list.html">
+                                                                <span class="menu-title">مدیریت قالب ها</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!-- end panel for seller -->
+                            </ul>
+
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-xl-10 col-lg-10 col-md-9">
+                    <main class="main-dashboard-content">
+
+                        <!-- start breadcrumb section -->
+                        <div class="breadcrumb-area">
+                            <h1>قالب های من</h1>
+                            <ol class="breadcrumb">
+                                <li class="item"><a href="dashboard.html">خانه</a></li>
+                                <li class="item">قالب های من</li>
+                            </ol>
+                        </div>
+
+                        <section class="dashboard-template-list">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="p-b">
+                                            <div class="heading d-flex align-items-center">
+                                                <h3>قالب های من</h3>
+                                                <button type="button" class="btn default-btn ms-auto"
+                                                    data-bs-toggle="modal" data-bs-target="#addTemplate">
+                                                    ثبت قالب
+                                                    <i class="fal fa-plus"></i>
+                                                </button>
+                                            </div>
+                                            <p class="alert alert-info text-danger py-2 px-3 m-3 border-0 d-none">قالبی
+                                                وجود
+                                                ندارد.</p>
+                                            <!-- start template for seller section -->
+                                            <div class="">
+                                                <h2 class="title">لیست قالب های من</h2>
+                                                <div class="template-table">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <tbody>
+                                                                <tr class="caption-title">
+                                                                    <th>
+                                                                        #
+                                                                    </th>
+                                                                    <th>
+                                                                        تصویر
+                                                                    </th>
+                                                                    <th>
+                                                                        نام قالب
+                                                                    </th>
+                                                                    <th>
+                                                                        دسته بندی
+                                                                    </th>
+                                                                    <th>
+                                                                        مزایا
+                                                                    </th>
+                                                                    <th>
+                                                                        قیمت
+                                                                    </th>
+                                                                    <th>
+                                                                        تعداد فروش
+                                                                    </th>
+                                                                    <th>
+                                                                        توضیحات
+                                                                    </th>
+                                                                    <th>
+                                                                        عملیات
+                                                                    </th>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>
+                                                                        <span>1</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <figure class="product-img">
+                                                                            <img src="./assets/images/MAHSOL-1.jpg"
+                                                                                class="img-fluid" alt="">
+                                                                        </figure>
+                                                                    </td>
+                                                                    <td>
+                                                                        <h4 class="name">
+                                                                            قالب themeshop
+                                                                        </h4>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="cate">
+                                                                            تک منظوره
+                                                                        </span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <ul class="score-list">
+                                                                            <li>html5</li>
+                                                                            <li>css3</li>
+                                                                            <li>bootstrap5</li>
+                                                                            <li>jq</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="price">
+                                                                            600.000 ریال
+                                                                        </span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="count">
+                                                                            5
+                                                                        </span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="description">
+                                                                            <p>این قالب تم شاپ داری 20 صفحه می باشد</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <ul class="action-btns">
+                                                                            <li data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش">
+                                                                                <i class="fas fa-pencil"></i>
+                                                                            </li>
+                                                                            <li data-bs-toggle="tooltip" data-bs-placement="top" title="حذف">
+                                                                                <i class="fal fa-times"></i>
+                                                                            </li>
+                                                                            <li data-bs-toggle="tooltip" data-bs-placement="top" title="پیش نمایش">
+                                                                                <i class="fas fa-eye"></i>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="">
+                                                                    <td>
+                                                                        <span>2</span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <figure class="product-img">
+                                                                            <img src="./assets/images/MAHSOL-2.jpg"
+                                                                                class="img-fluid" alt="">
+                                                                        </figure>
+                                                                    </td>
+                                                                    <td>
+                                                                        <h4 class="name">
+                                                                            قالب toplearn
+                                                                        </h4>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="cate">
+                                                                            فروشگاهی
+                                                                        </span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <ul class="score-list">
+                                                                            <li>html3</li>
+                                                                            <li>css3</li>
+                                                                            <li>bootstrap4</li>
+                                                                            <li>js</li>
+                                                                        </ul>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="price">
+                                                                            400.000 ریال
+                                                                        </span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="count">
+                                                                            0
+                                                                        </span>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="description">
+                                                                            <p>این قالب تاپلرن داری 15 صفحه می باشد</p>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <ul class="action-btns">
+                                                                            <li data-bs-toggle="tooltip" data-bs-placement="top" title="ویرایش">
+                                                                                <i class="fas fa-pencil"></i>
+                                                                            </li>
+                                                                            <li data-bs-toggle="tooltip" data-bs-placement="top" title="حذف">
+                                                                                <i class="fal fa-times"></i>
+                                                                            </li>
+                                                                            <li data-bs-toggle="tooltip" data-bs-placement="top" title="پیش نمایش">
+                                                                                <i class="fas fa-eye"></i>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end template for seller section -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+
+
+                        <div class="copyrights-area">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 col-sm-6 col-md-6">
+                                    <p><i class="ri-copyright-line"></i> کپی رایت 1400. تمام حقوق قالب محفوظ است. طراحی
+                                        توسط <a href="#">زوبن</a> </p>
+                                </div>
+                                <div class="col-lg-6 col-sm-6 col-md-6 text-end">
+                                    <p>طراحی توسط <a href="https://www.rtl-theme.com/author/barat" target="_blank">Barat
+                                            Hadian</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </main>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/jquery.min.js"></script>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+
+    <script src="assets/js/odometer.min.js"></script>
+
+    <script src="assets/js/jquery.appear.min.js"></script>
+
+    <script src="assets/js/meanmenu.min.js"></script>
+
+    <script src="assets/js/metismenu.min.js"></script>
+
+    <script src="assets/js/simplebar.min.js"></script>
+
+    <script src="assets/js/dropzone.min.js"></script>
+
+    <script src="assets/js/sticky-sidebar.min.js"></script>
+
+    <script src="assets/js/tweenMax.min.js"></script>
+
+    <script src="assets/js/owl.carousel.min.js"></script>
+
+    <script src="assets/js/wow.min.js"></script>
+
+    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+
+    <script src="assets/js/form-validator.min.js"></script>
+
+    <script src="assets/js/contact-form-script.js"></script>
+
+    <script src="assets/js/custom.js"></script>
+    <script>
+        function preview() {
+            frame.src = URL.createObjectURL(event.target.files[0]);
+        }
+        function clearImage() {
+            document.getElementById('formFile').value = null;
+            frame.src = "";
+        }
+    </script>
+</body>
+
+</html>
